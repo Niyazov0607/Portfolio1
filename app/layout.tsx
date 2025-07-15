@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { QueryProvider } from "@/query/QueryProvider";
 import Layout from "@/features";
+import FollowCursor from "@/components/follow-cursor-effect";
+import ScrollProgress from "@/components/scroll-progress";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -31,6 +33,8 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
+                <FollowCursor />
+                <ScrollProgress />
                 <QueryProvider>
                     <Layout>{children}</Layout>
                 </QueryProvider>
